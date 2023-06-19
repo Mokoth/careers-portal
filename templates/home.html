@@ -1,32 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-</head>
-<style>
-  h1,
-  h2 {
-    font-family: Roboto;
-    text-align: center;
-    color: rgb(180, 180, 100)
-  }
-
-  .bodytext {
-    font-family: rosybrown;
-    text-align: center;
-    color: rgb(80, 90, 90)
-  }
-
-  #container {
-    max-width: 720px;
-    margin: 0 auto 0 auto;
-  }
-</style>
-</head>
-<body>
-
-</body>
-</html>
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+  <h1>Noble Career</h1>
+  <img src="{{url_for('static', filename='logo.png')}}" alt="">
+  <h2>About Noble</h2>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit est repellendus mollitia nisi excepturi error
+    doloribus tempore, eius optio commodi ullam temporibus provident, nulla molestias accusantium cumque officia! Sint,
+    alias?
+    Optio aliquam, nobis nisi dicta cupiditate quis pariatur corrupti doloremque ex consequatur aliquid libero
+    praesentium exercitationem sapiente labore similique nulla quibusdam! Eaque, vel? Eaque sequi omnis suscipit vero
+    perferendis voluptatum?
+    Odio tempora, eaque id repudiandae distinctio doloribus expedita modi exercitationem, explicabo nobis eveniet, vero
+    quae cumque. Facilis amet soluta id libero officia illum provident doloremque eum? Magnam cupiditate asperiores
+    repellat?</p>
+  <h2>Open positions</h2>
+  <!-- <p>Todo - show job positions</p> -->
+  {%for job in jobs%}
+  {% include 'jobitem.html'%}
+  {%endfor%}
+  <div class="bottom margin-top">
+    <button class="btn btn-outline-primary">Contact us</button>
+    <p>Copyright@Noble 2023</p>
+  </div>
+</div>
+{%endblock%}
