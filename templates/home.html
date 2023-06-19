@@ -1,27 +1,35 @@
 {%extends 'base.html'%}
 {%block title%}Noble{%endblock%}
 {%block content%}
+{%include 'navbar.html'%}
 <div class="container">
-  <h1>Noble Career</h1>
-  <img src="{{url_for('static', filename='logo.png')}}" alt="">
-  <h2>About Noble Careers</h2>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit est repellendus mollitia nisi excepturi error
-    doloribus tempore, eius optio commodi ullam temporibus provident, nulla molestias accusantium cumque officia! Sint,
-    alias?
-    Optio aliquam, nobis nisi dicta cupiditate quis pariatur corrupti doloremque ex consequatur aliquid libero
-    praesentium exercitationem sapiente labore similique nulla quibusdam! Eaque, vel? Eaque sequi omnis suscipit vero
-    perferendis voluptatum?
-    Odio tempora, eaque id repudiandae distinctio doloribus expedita modi exercitationem, explicabo nobis eveniet, vero
-    quae cumque. Facilis amet soluta id libero officia illum provident doloremque eum? Magnam cupiditate asperiores
-    repellat?</p>
-  <h2>Current Openings</h2>
+  <!-- <h1 class="display-3">Noble Career</h1> -->
+  <div style="margin: 66px 0 0 0;" class="row">
+    <div class="col-md-6">
+      <h2>Unlock Your Future: Explore Endless Career Possibilities on our Portal!
+      </h2>
+      <p class="lead">
+        Welcome to our career portal, your gateway to a world of professional opportunities! Whether you're a recent
+        graduate, a seasoned professional looking for a change, or someone seeking to advance your career, we've got you
+        covered.
+      </p>
+      <p class="lead">Join our vibrant community of job seekers and professionals who are all on a mission to achieve
+        their career
+        aspirations. Through discussion forums and networking groups, you can engage with like-minded individuals, share
+        insights, and build valuable connections that can propel your career forward.</p>
+    </div>
+    <div class="d-none d-md-block col-md-6">
+      <img class="img-fluid" src="{{url_for('static', filename='open.jpg')}}" alt="">
+    </div>
+  </div>
+  <h2 class="text-center py-7">Current Openings</h2>
   <!-- <p>Todo - show job positions</p> -->
   {%for job in jobs%}
   {% include 'jobitem.html'%}
   {%endfor%}
   <div class="bottom margin-top">
     <button class="btn btn-outline-primary">Contact us</button>
-    <p>Copyright@Noble 2023</p>
   </div>
 </div>
+{%include 'footer.html'%}
 {%endblock%}
